@@ -31,6 +31,8 @@ pair<i64, i64> calculaSumasAcumulada(vector<int> puntos) {
 
     sumaPositiva = sumaPositiva % mod;
     sumaNegativa = sumaNegativa % mod;
+
+    i += ocurrencias;
   }
   return {sumaPositiva, sumaNegativa};
 }
@@ -49,6 +51,8 @@ int main() {
   auto sumasQ = calculaSumasAcumulada(puntosQ);
   i64 sumaPositiva = (sumasP.first + sumasQ.first) % mod;
   i64 sumaNegativa = (sumasP.second + sumasQ.second) % mod;
+
+  printf("%lli %lli\n", sumaPositiva, sumaNegativa);
 
   i64 sumaManhattan = (sumaPositiva - sumaNegativa) % mod;
   if (sumaManhattan < 0) {
